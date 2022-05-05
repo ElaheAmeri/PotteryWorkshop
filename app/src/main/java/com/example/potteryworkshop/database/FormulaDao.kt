@@ -7,14 +7,15 @@ interface FormulaDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(formula:FormulaEntity)
 
+    @Insert
+    fun insertAll(vararg formuls :List<FormulaEntity>)
+
     @Delete
     fun delet(formula:FormulaEntity)
 
     @Update
     fun update(formula:FormulaEntity)
 
-    @Query("SELECT * FROM furmolatable WHERE  IN(:ENGWord) ")
-    fun getWord(ENGWord : String): Word
 
 
 }

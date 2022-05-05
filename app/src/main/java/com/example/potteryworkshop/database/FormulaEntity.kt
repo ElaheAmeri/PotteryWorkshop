@@ -10,9 +10,9 @@ data class FormulaEntity(
                         @ColumnInfo(name="GlazeIngredients")
                         val GlazeIngredients :String="",
                         @ColumnInfo(name="code")
-                        val code :Int,
+                        val code :String,
                         @ColumnInfo(name="value")
-                        val value :Float,
+                        val value :String,
                         @ColumnInfo(name="description")
                         val description :String="") {
 }
