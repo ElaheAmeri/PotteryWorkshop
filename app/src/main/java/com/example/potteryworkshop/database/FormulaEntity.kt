@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "FurmolaTable")
-data class FurmolaEntity(
+data class FormulaEntity(
                         @PrimaryKey(autoGenerate = true)
                         @ColumnInfo(name="GlazeIngredients")
                         val GlazeIngredients :String="",

@@ -18,7 +18,7 @@
         android:id="@+id/addFurmolFragment"
         android:name="com.example.potteryworkshop.ui.AddFurmolFragment"
         android:label="fragment_add_furmol"
-        tools:layout="@layout/fragment_add_furmol" >
+        tools:layout="@layout/fragment_add_formula" >
         <action
             android:id="@+id/action_addFurmolFragment_to_editFurmolaFragment"
             app:destination="@id/editFurmolaFragment" />
@@ -27,7 +27,7 @@
         android:id="@+id/editFurmolaFragment"
         android:name="com.example.potteryworkshop.ui.EditFurmolaFragment"
         android:label="fragment_edit_furmola"
-        tools:layout="@layout/fragment_edit_furmola" >
+        tools:layout="@layout/fragment_edit_formula" >
         <action
             android:id="@+id/action_editFurmolaFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
