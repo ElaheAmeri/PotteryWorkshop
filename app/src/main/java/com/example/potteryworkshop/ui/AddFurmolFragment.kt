@@ -8,13 +8,15 @@ import android.view.LayoutInflater
 import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import com.example.potteryworkshop.R
+import com.example.potteryworkshop.databinding.FragmentAddFormulaBinding
 import com.example.potteryworkshop.databinding.FragmentHomeBinding
 
 
 class AddFurmolFragment : Fragment() {
 
-    var binding: FragmentHomeBinding? = null
+    var binding: FragmentAddFormulaBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -24,7 +26,7 @@ class AddFurmolFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentAddFormulaBinding.inflate(inflater, container, false)
         val view = binding!!.root
         return view
 
@@ -32,6 +34,10 @@ class AddFurmolFragment : Fragment() {
 
      override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+         binding!!.btnAddFormula.setOnClickListener(){
+             var dialog =CustomDialogFragment()
+             dialog.show(childFragmentManager,"custom")
+         }
 
     }
 
