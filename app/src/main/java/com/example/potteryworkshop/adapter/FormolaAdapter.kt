@@ -33,11 +33,11 @@ class FormulaAdapter(var dataSet: List<FormulaEntity>) :
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+            viewHolder.textViewGlazeIngredients.text = dataSet[position].GlazeIngredients
+            viewHolder.textViewCode.text=dataSet[position].code
+            viewHolder.textViewValue.text=dataSet[position].value
+            viewHolder.textViewDescription.text=dataSet[position].description
 
-        viewHolder.textViewGlazeIngredients.text = dataSet[0].GlazeIngredients
-        viewHolder.textViewCode.text=dataSet[0].code
-        viewHolder.textViewValue.text=dataSet[0].value
-        viewHolder.textViewDescription.text=dataSet[0].description
     }
 
     override fun getItemCount() = dataSet.size
