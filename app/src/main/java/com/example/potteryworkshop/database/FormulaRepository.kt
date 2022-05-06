@@ -5,9 +5,15 @@ import android.content.Context
 object FormulaRepository {
     lateinit var db: AppDataBase
     lateinit var dao: FormulaDao
+    var formuls= arrayListOf<FormulaEntity>(
+        FormulaEntity("sorb","1","1.5",""),
+        FormulaEntity("jive","2","3.0",""),
+        FormulaEntity("felez","3","6","")
+    )
    fun initDB(context: Context){
        db= AppDataBase.getAppDataBase(context)
        dao=db.formulaDao()
+       addTestData()
    }
     fun insert(formulaEntity: FormulaEntity){
         dao.insert(formulaEntity)
@@ -22,11 +28,6 @@ object FormulaRepository {
         dao.update(formula)
     }
     fun addTestData(){
-        var formuls= arrayListOf<FormulaEntity>(
-            FormulaEntity("sorb","1","1.5",""),
-            FormulaEntity("jive","2","3.0",""),
-            FormulaEntity("felez","3","6","")
-        )
         dao.insertAll(formuls)
     }
 }

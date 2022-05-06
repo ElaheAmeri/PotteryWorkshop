@@ -7,15 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.potteryworkshop.R
+import com.example.potteryworkshop.adapter.FormulaAdapter
+import com.example.potteryworkshop.database.FormulaRepository
 import com.example.potteryworkshop.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
     var binding: FragmentHomeBinding? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -33,5 +35,12 @@ class HomeFragment : Fragment() {
         binding!!.btnAdd.setOnClickListener(){
             findNavController().navigate(R.id.action_homeFragment_to_addFurmolFragment)
         }
+        initList()
+    }
+    fun initList(){
+        var adapter=FormulaAdapter(listOf())
+        binding!!.recycleViewHomeFragment.adapter=adapter
+        adapter.dataSet=FormulaRepository.formuls
+        adapter.notifyDataSetChanged()
     }
 }

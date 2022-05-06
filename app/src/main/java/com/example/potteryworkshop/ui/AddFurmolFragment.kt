@@ -24,5 +24,9 @@ class AddFurmolFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_add_formula, container, false)
     }
 
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+//        val view = LayoutInflater.from(view.context)
+//           .inflate(R.layout.dialog, viewGroup, false)
+    }
 }
